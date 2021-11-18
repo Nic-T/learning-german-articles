@@ -15,6 +15,13 @@ export class ArticlesService {
     return await this.repository.save(createArticleDto);
   }
 
+  public async createMany(createArticleDto) {
+    await createArticleDto.forEach((element) => {
+      this.repository.save(element);
+    });
+    return;
+  }
+
   public async findAll() {
     return await this.repository.find();
   }

@@ -20,6 +20,11 @@ export class ArticlesController {
     return this.articlesService.create(createArticleDto);
   }
 
+  @Post('/many')
+  createMany(@Body() createArticleDto: any) {
+    return this.articlesService.createMany(createArticleDto);
+  }
+
   @Get()
   findAll() {
     return this.articlesService.findAll();
